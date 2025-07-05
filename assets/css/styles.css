@@ -1,0 +1,217 @@
+/* Main stylesheet for ESD Security Business Website */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f7f9fa;
+  color: #222;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a2236;
+  color: #fff;
+  padding: 0.5rem 2rem;
+}
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .brand img {
+  height: 40px;
+  margin-right: 0.75rem;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar .nav-links a:hover {
+  color: #ffb400;
+}
+
+.navbar .sign-in {
+  background: #ffb400;
+  color: #1a2236;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.navbar .sign-in:hover {
+  background: #ffd580;
+}
+
+.hero {
+  background: linear-gradient(120deg, #1a2236 60%, #ffb400 100%);
+  color: #fff;
+  padding: 4rem 2rem 3rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.featured-products,
+.pricing,
+.newsletter,
+.footer {
+  margin: 2rem auto;
+  max-width: 1100px;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.featured-products h2,
+.pricing h2,
+.newsletter h2 {
+  margin-top: 0;
+}
+
+.products-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  background: #f7f9fa;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  width: 260px;
+  text-align: center;
+}
+
+.product-card img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.pricing-table {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pricing-option {
+  background: #f7f9fa;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  width: 260px;
+  text-align: center;
+}
+
+.pricing-option .price {
+  font-size: 2rem;
+  color: #ffb400;
+  margin: 1rem 0;
+}
+
+.newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.newsletter input[type="email"] {
+  padding: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 220px;
+}
+
+.newsletter button {
+  background: #1a2236;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.newsletter button:hover {
+  background: #ffb400;
+  color: #1a2236;
+}
+
+.footer {
+  background: #1a2236;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-section {
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #ffb400;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .products-list,
+  .pricing-table {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
