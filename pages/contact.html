@@ -15,28 +15,51 @@
       <div class="nav-links">
         <a href="../index.html">Home</a>
         <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="dashboard.html">Dashboard</a>
       </div>
       <button class="sign-in">Sign In</button>
     </div>
-    <div class="featured-products">
+    <div class="featured-products auth-modal">
       <h2>Contact Us</h2>
-      <form>
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" required /><br /><br />
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required /><br /><br />
-        <label for="message">Message:</label><br />
-        <textarea id="message" name="message" rows="4" required></textarea
-        ><br /><br />
-        <button type="submit">Send Message</button>
+      <p>
+        Have a question or need support? Fill out the form below or email us at
+        <a href="mailto:support@esdsecurity.com">support@esdsecurity.com</a>.
+      </p>
+      <form id="contact-form" class="auth-form">
+        <label for="contact-name">Name</label><br />
+        <input type="text" id="contact-name" name="name" required /><br />
+        <label for="contact-email">Email</label><br />
+        <input type="email" id="contact-email" name="email" required /><br />
+        <label for="contact-message">Message</label><br />
+        <textarea
+          id="contact-message"
+          name="message"
+          rows="4"
+          required
+          style="
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 1.2rem;
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            border: 1.5px solid #ccc;
+            background: #f7f9fa;
+          "
+        ></textarea
+        ><br />
+        <button type="submit" class="modern-btn">Send Message</button>
       </form>
+      <div id="contact-success" style="margin-top: 1rem; color: #1a2236"></div>
     </div>
     <footer class="footer">
       <div class="footer-section">
         <h4>Products</h4>
         <ul>
-          <li><a href="products.html">SecureScan Antivirus</a></li>
-          <li><a href="products.html">Eagle AI CCTV</a></li>
+          <li><a href="product-antivirus.html">SecureScan Antivirus</a></li>
+          <li><a href="product-cctv.html">Eagle AI CCTV</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -45,6 +68,10 @@
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="return-refund.html">Return & Refund Policy</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -57,5 +84,35 @@
       </div>
     </footer>
     <script src="../assets/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contact-form");
+        const msg = document.getElementById("contact-success");
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = document.getElementById("contact-name").value.trim();
+            const email = document.getElementById("contact-email").value.trim();
+            const message = document
+              .getElementById("contact-message")
+              .value.trim();
+            if (!name || !email || !message) {
+              msg.style.color = "#ffb400";
+              msg.textContent = "Please fill in all fields.";
+              return;
+            }
+            if (!email.includes("@")) {
+              msg.style.color = "#ffb400";
+              msg.textContent = "Please enter a valid email address.";
+              return;
+            }
+            msg.style.color = "#1a2236";
+            msg.textContent =
+              "Thank you for contacting us! We will get back to you soon.";
+            form.reset();
+          });
+        }
+      });
+    </script>
   </body>
 </html>

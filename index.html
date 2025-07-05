@@ -4,94 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ESD Security Business</title>
+    <meta
+      name="description"
+      content="ESD Security - Digital and physical security solutions for your business and home. Protect your devices and premises with SecureScan Antivirus and Eagle AI CCTV."
+    />
+    <meta property="og:title" content="ESD Security Business" />
+    <meta
+      property="og:description"
+      content="Protect your business and home with SecureScan Antivirus and Eagle AI CCTV. Advanced security solutions for everyone."
+    />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <div class="navbar">
-      <div class="brand">
-        <img src="assets/images/logo.png" alt="ESD Logo" />
-        <span>ESD Security</span>
-      </div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="pages/products.html">Products</a>
-      </div>
-      <button
-        class="sign-in"
-        onclick="window.location.href='pages/signin.html'"
-      >
-        Sign In
-      </button>
-    </div>
-    <section class="hero">
-      <h1>Welcome to ESD Security</h1>
-      <p>
-        Your trusted partner in digital and physical security. Protect your
-        devices and premises with our advanced solutions.
-      </p>
-    </section>
-    <section class="featured-products">
-      <h2>Featured Products</h2>
-      <div class="products-list">
-        <div class="product-card">
-          <img src="assets/images/antivirus.png" alt="SecureScan Antivirus" />
-          <h3>SecureScan Antivirus</h3>
-          <p>
-            Advanced protection against malware, ransomware, and cyber threats.
-            Real-time scanning and automatic updates.
-          </p>
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
+        <div class="brand">
+          <img src="assets/images/logo.png" alt="ESD Security Logo" />
+          <span>ESD Security</span>
         </div>
-        <div class="product-card">
-          <img src="assets/images/cctv.png" alt="Eagle AI CCTV" />
-          <h3>Eagle AI-Powered CCTV</h3>
-          <p>
-            Smart surveillance with AI detection, instant alerts, and cloud
-            storage. Monitor your premises from anywhere.
-          </p>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="pages/products.html">Products</a>
+          <a href="pages/about.html">About</a>
+          <a href="pages/blog.html">Blog</a>
+          <a href="pages/testimonials.html">Testimonials</a>
+          <a href="pages/dashboard.html">Dashboard</a>
         </div>
-      </div>
-    </section>
-    <section class="pricing">
-      <h2>Pricing & Subscription</h2>
-      <div class="pricing-table">
-        <div class="pricing-option">
-          <h3>SecureScan Antivirus</h3>
-          <div class="price">$5/mo or $50/yr</div>
-          <p>Standalone antivirus subscription for all your devices.</p>
+        <button
+          class="sign-in"
+          onclick="window.location.href='pages/signin.html'"
+        >
+          Sign In
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Welcome to ESD Security</h1>
+        <p>
+          Your trusted partner in digital and physical security. Protect your
+          devices and premises with our advanced solutions.
+        </p>
+      </section>
+      <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="products-list">
+          <div class="product-card">
+            <img
+              src="assets/images/antivirus.png"
+              alt="SecureScan Antivirus Product"
+            />
+            <h3>SecureScan Antivirus</h3>
+            <p>
+              Advanced protection against malware, ransomware, and cyber
+              threats. Real-time scanning and automatic updates.
+            </p>
+          </div>
+          <div class="product-card">
+            <img src="assets/images/cctv.png" alt="Eagle AI CCTV Product" />
+            <h3>Eagle AI-Powered CCTV</h3>
+            <p>
+              Smart surveillance with AI detection, instant alerts, and cloud
+              storage. Monitor your premises from anywhere.
+            </p>
+          </div>
         </div>
-        <div class="pricing-option">
-          <h3>Eagle AI CCTV</h3>
-          <div class="price">$10/mo or $100/yr</div>
-          <p>Standalone AI-powered CCTV subscription for your premises.</p>
+      </section>
+      <section class="pricing">
+        <h2>Pricing & Subscription</h2>
+        <div class="pricing-table">
+          <div class="pricing-option">
+            <h3>SecureScan Antivirus</h3>
+            <div class="price">$5/mo or $50/yr</div>
+            <p>Standalone antivirus subscription for all your devices.</p>
+          </div>
+          <div class="pricing-option">
+            <h3>Eagle AI CCTV</h3>
+            <div class="price">$10/mo or $100/yr</div>
+            <p>Standalone AI-powered CCTV subscription for your premises.</p>
+          </div>
+          <div class="pricing-option">
+            <h3>Combined Security Bundle</h3>
+            <div class="price">$13/mo or $130/yr</div>
+            <p>
+              Get both SecureScan Antivirus and Eagle AI CCTV at a discounted
+              price.
+            </p>
+          </div>
         </div>
-        <div class="pricing-option">
-          <h3>Combined Security Bundle</h3>
-          <div class="price">$13/mo or $130/yr</div>
-          <p>
-            Get both SecureScan Antivirus and Eagle AI CCTV at a discounted
-            price.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="newsletter">
-      <h2>Subscribe to Our Newsletter</h2>
-      <form id="newsletter-form">
-        <input
-          type="email"
-          id="newsletter-email"
-          placeholder="Enter your email"
-          required
-        />
-        <button type="submit">Subscribe</button>
-      </form>
-    </section>
+      </section>
+      <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+          <input
+            type="email"
+            id="newsletter-email"
+            placeholder="Enter your email"
+            required
+            aria-label="Email address"
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+    </main>
     <footer class="footer">
       <div class="footer-section">
         <h4>Products</h4>
         <ul>
-          <li><a href="pages/products.html">SecureScan Antivirus</a></li>
-          <li><a href="pages/products.html">Eagle AI CCTV</a></li>
+          <li>
+            <a href="pages/product-antivirus.html">SecureScan Antivirus</a>
+          </li>
+          <li><a href="pages/product-cctv.html">Eagle AI CCTV</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -100,14 +123,18 @@
           <li><a href="pages/faq.html">FAQ</a></li>
           <li><a href="pages/contact.html">Contact Us</a></li>
           <li><a href="pages/return-refund.html">Return & Refund Policy</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/terms.html">Terms</a></li>
+          <li><a href="pages/privacy.html">Privacy</a></li>
+          <li><a href="pages/dashboard.html">Dashboard</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h4>Follow Us</h4>
         <ul>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#" aria-label="Twitter">Twitter</a></li>
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
         </ul>
       </div>
     </footer>

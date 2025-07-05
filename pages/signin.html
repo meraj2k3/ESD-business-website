@@ -15,6 +15,10 @@
       <div class="nav-links">
         <a href="../index.html">Home</a>
         <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="dashboard.html">Dashboard</a>
       </div>
       <button class="sign-in" disabled>Sign In</button>
     </div>
@@ -33,13 +37,31 @@
       <a class="sign-in-link" href="signup.html"
         >Don't have an account? Sign Up</a
       >
+      <button
+        id="google-signin"
+        class="modern-btn"
+        style="
+          margin-top: 1rem;
+          width: 100%;
+          background: #fff;
+          color: #1a2236;
+          border: 1.5px solid #ffb400;
+        "
+      >
+        <img
+          src="https://developers.google.com/identity/images/g-logo.png"
+          alt="Google logo"
+          style="height: 20px; vertical-align: middle; margin-right: 8px"
+        />
+        Sign in with Google
+      </button>
     </div>
     <footer class="footer">
       <div class="footer-section">
         <h4>Products</h4>
         <ul>
-          <li><a href="products.html">SecureScan Antivirus</a></li>
-          <li><a href="products.html">Eagle AI CCTV</a></li>
+          <li><a href="product-antivirus.html">SecureScan Antivirus</a></li>
+          <li><a href="product-cctv.html">Eagle AI CCTV</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -48,6 +70,10 @@
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="return-refund.html">Return & Refund Policy</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -78,13 +104,49 @@
             return;
           }
           // Simulate sign in success
+          localStorage.setItem("esd_username", name);
           msg.style.color = "#1a2236";
           msg.textContent = "Sign in successful! Welcome, " + name + ".";
           setTimeout(function () {
-            window.location.href = "../index.html";
+            window.location.href = "dashboard.html";
           }, 1500);
         });
       });
+    </script>
+    <script>
+      // Google OAuth 2.0 (Client-Side Only)
+      const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID"; // <-- Replace with your client ID
+      const REDIRECT_URI = window.location.origin + "/pages/signin.html";
+
+      document.getElementById("google-signin").onclick = function () {
+        const url =
+          "https://accounts.google.com/o/oauth2/v2/auth" +
+          "?client_id=" +
+          encodeURIComponent(GOOGLE_CLIENT_ID) +
+          "&redirect_uri=" +
+          encodeURIComponent(REDIRECT_URI) +
+          "&response_type=token" +
+          "&scope=profile email" +
+          "&prompt=select_account";
+        window.location.href = url;
+      };
+
+      window.onload = function () {
+        if (window.location.hash.includes("access_token")) {
+          const params = new URLSearchParams(window.location.hash.substr(1));
+          const accessToken = params.get("access_token");
+          if (accessToken) {
+            fetch("https://www.googleapis.com/oauth2/v2/userinfo", {
+              headers: { Authorization: "Bearer " + accessToken },
+            })
+              .then((res) => res.json())
+              .then((user) => {
+                localStorage.setItem("esd_username", user.name);
+                window.location.href = "dashboard.html";
+              });
+          }
+        }
+      };
     </script>
     <style>
       .auth-modal {

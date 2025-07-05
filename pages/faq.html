@@ -15,12 +15,29 @@
       <div class="nav-links">
         <a href="../index.html">Home</a>
         <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="dashboard.html">Dashboard</a>
       </div>
       <button class="sign-in">Sign In</button>
     </div>
     <div class="featured-products">
       <h2>Frequently Asked Questions</h2>
-      <ul>
+      <input
+        type="text"
+        id="faq-search"
+        placeholder="Search FAQs..."
+        style="
+          width: 100%;
+          max-width: 400px;
+          margin-bottom: 1.5rem;
+          padding: 0.7rem 1rem;
+          border-radius: 6px;
+          border: 1.5px solid #ccc;
+        "
+      />
+      <ul id="faq-list">
         <li>
           <strong>How do I subscribe?</strong> Visit our pricing section on the
           home page and choose your preferred plan.
@@ -33,14 +50,26 @@
           <strong>Is my data secure?</strong> Absolutely. We use
           industry-standard encryption and security practices.
         </li>
+        <li>
+          <strong>What payment methods do you accept?</strong> We accept
+          credit/debit cards and PayPal.
+        </li>
+        <li>
+          <strong>How do I contact support?</strong> Use the contact form or
+          email support@esdsecurity.com.
+        </li>
+        <li>
+          <strong>Do you offer business plans?</strong> Yes, contact us for
+          custom business solutions.
+        </li>
       </ul>
     </div>
     <footer class="footer">
       <div class="footer-section">
         <h4>Products</h4>
         <ul>
-          <li><a href="products.html">SecureScan Antivirus</a></li>
-          <li><a href="products.html">Eagle AI CCTV</a></li>
+          <li><a href="product-antivirus.html">SecureScan Antivirus</a></li>
+          <li><a href="product-cctv.html">Eagle AI CCTV</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -49,6 +78,10 @@
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="return-refund.html">Return & Refund Policy</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -61,5 +94,21 @@
       </div>
     </footer>
     <script src="../assets/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const search = document.getElementById("faq-search");
+        const list = document.getElementById("faq-list");
+        if (search && list) {
+          search.addEventListener("input", function () {
+            const val = search.value.toLowerCase();
+            Array.from(list.children).forEach(function (li) {
+              li.style.display = li.textContent.toLowerCase().includes(val)
+                ? ""
+                : "none";
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>
