@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | ESD Security</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <style>
+      .auth-modal {
+        max-width: 400px;
+        margin: 3rem auto 2rem auto;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(26, 34, 54, 0.08);
+      }
+      .auth-form input[type="text"],
+      .auth-form input[type="email"],
+      .auth-form input[type="password"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.8rem 1rem;
+        margin-bottom: 1.2rem;
+        border: 1.5px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        background: #f7f9fa;
+        transition: border 0.2s, box-shadow 0.2s;
+        outline: none;
+        display: block;
+      }
+      .auth-form input:focus {
+        border: 1.5px solid #ffb400;
+        box-shadow: 0 0 0 2px #ffecb3;
+      }
+      .auth-form label {
+        font-weight: 500;
+        color: #1a2236;
+      }
+      .sign-in-link {
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+        color: #1a2236;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .modern-btn {
+        width: 100%;
+        background: linear-gradient(90deg, #1a2236 60%, #ffb400 100%);
+        color: #fff;
+        border: none;
+        padding: 0.9rem 0;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(26, 34, 54, 0.08);
+        transition: background 0.2s, color 0.2s;
+        margin-top: 0.5rem;
+        letter-spacing: 0.5px;
+      }
+      .modern-btn:hover {
+        background: linear-gradient(90deg, #ffb400 60%, #1a2236 100%);
+        color: #1a2236;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="brand">
+        <img src="../assets/images/logo.png" alt="ESD Logo" />
+        <span>ESD Security</span>
+      </div>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="products.html">Products</a>
+      </div>
+      <button class="sign-in" onclick="window.location.href='signin.html'">
+        Sign In
+      </button>
+    </div>
+    <div class="featured-products auth-modal">
+      <h2>Sign Up</h2>
+      <form id="signup-form" class="auth-form">
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required /><br />
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="password">Password</label><br />
+        <input type="password" id="password" name="password" required /><br />
+        <button type="submit" class="modern-btn">Sign Up</button>
+      </form>
+      <div id="signup-message" style="margin-top: 1rem; color: #ffb400"></div>
+      <a class="sign-in-link" href="signin.html"
+        >Already have an account? Sign In</a
+      >
+    </div>
+    <footer class="footer">
+      <div class="footer-section">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html">SecureScan Antivirus</a></li>
+          <li><a href="products.html">Eagle AI CCTV</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="return-refund.html">Return & Refund Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("signup-form");
+        const msg = document.getElementById("signup-message");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const password = document.getElementById("password").value;
+          if (!name || !email || !password) {
+            msg.textContent = "Please fill in all fields.";
+            return;
+          }
+          if (!email.includes("@")) {
+            msg.textContent = "Please enter a valid email address.";
+            return;
+          }
+          msg.style.color = "#1a2236";
+          msg.textContent = "Sign up successful! You can now sign in.";
+          setTimeout(function () {
+            window.location.href = "signin.html";
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
