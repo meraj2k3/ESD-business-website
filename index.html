@@ -45,23 +45,33 @@
           Your trusted partner in digital and physical security. Protect your
           devices and premises with our advanced solutions.
         </p>
+        <div class="hero-buttons">
+          <a href="pages/products.html" class="hero-btn primary"
+            >Explore Products</a
+          >
+          <a href="pages/contact.html" class="hero-btn secondary">Contact Us</a>
+        </div>
       </section>
       <section class="featured-products">
         <h2>Featured Products</h2>
-        <div class="products-list">
-          <div class="product-card">
-            <img
-              src="assets/images/antivirus.png"
-              alt="SecureScan Antivirus Product"
-            />
+        <div class="products-list redesigned">
+          <div class="product-card icon-card">
+            <div class="icon-bg antivirus-icon">
+              <img
+                src="assets/images/antivirus.png"
+                alt="SecureScan Antivirus Product"
+              />
+            </div>
             <h3>SecureScan Antivirus</h3>
             <p>
               Advanced protection against malware, ransomware, and cyber
               threats. Real-time scanning and automatic updates.
             </p>
           </div>
-          <div class="product-card">
-            <img src="assets/images/cctv.png" alt="Eagle AI CCTV Product" />
+          <div class="product-card icon-card">
+            <div class="icon-bg cctv-icon">
+              <img src="assets/images/cctv.png" alt="Eagle AI CCTV Product" />
+            </div>
             <h3>Eagle AI-Powered CCTV</h3>
             <p>
               Smart surveillance with AI detection, instant alerts, and cloud
@@ -70,30 +80,54 @@
           </div>
         </div>
       </section>
-      <section class="pricing">
+      <section class="pricing redesigned">
         <h2>Pricing & Subscription</h2>
-        <div class="pricing-table">
+        <div class="pricing-table redesigned">
           <div class="pricing-option">
+            <div class="pricing-badge basic">Popular</div>
+            <div class="pricing-icon antivirus-icon">
+              <img src="assets/images/antivirus.png" alt="Antivirus" />
+            </div>
             <h3>SecureScan Antivirus</h3>
-            <div class="price">$5/mo or $50/yr</div>
-            <p>Standalone antivirus subscription for all your devices.</p>
+            <div class="price">$5/mo <span>or $50/yr</span></div>
+            <ul class="pricing-features">
+              <li>Real-time protection</li>
+              <li>Multi-device support</li>
+              <li>Automatic updates</li>
+            </ul>
+            <button class="modern-btn">Choose Plan</button>
           </div>
-          <div class="pricing-option">
-            <h3>Eagle AI CCTV</h3>
-            <div class="price">$10/mo or $100/yr</div>
-            <p>Standalone AI-powered CCTV subscription for your premises.</p>
-          </div>
-          <div class="pricing-option">
+          <div class="pricing-option highlight">
+            <div class="pricing-badge bundle">Best Value</div>
+            <div class="pricing-icon bundle-icon">
+              <img src="assets/images/bundle.png" alt="Bundle" />
+            </div>
             <h3>Combined Security Bundle</h3>
-            <div class="price">$13/mo or $130/yr</div>
-            <p>
-              Get both SecureScan Antivirus and Eagle AI CCTV at a discounted
-              price.
-            </p>
+            <div class="price">$13/mo <span>or $130/yr</span></div>
+            <ul class="pricing-features">
+              <li>Antivirus + AI CCTV</li>
+              <li>Full device & premises protection</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="modern-btn">Choose Plan</button>
+          </div>
+          <div class="pricing-option">
+            <div class="pricing-badge pro">Pro</div>
+            <div class="pricing-icon cctv-icon">
+              <img src="assets/images/cctv.png" alt="CCTV" />
+            </div>
+            <h3>Eagle AI CCTV</h3>
+            <div class="price">$10/mo <span>or $100/yr</span></div>
+            <ul class="pricing-features">
+              <li>AI-powered surveillance</li>
+              <li>Cloud storage</li>
+              <li>Instant alerts</li>
+            </ul>
+            <button class="modern-btn">Choose Plan</button>
           </div>
         </div>
       </section>
-      <section class="newsletter">
+      <section class="newsletter redesigned">
         <h2>Subscribe to Our Newsletter</h2>
         <form id="newsletter-form">
           <input
