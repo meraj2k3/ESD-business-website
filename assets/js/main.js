@@ -1,4 +1,4 @@
-// Main JS for ESD Security Business Website
+// Main JS for Security vigilance Business Website
 
 document.addEventListener("DOMContentLoaded", function () {
   // Newsletter form submission
